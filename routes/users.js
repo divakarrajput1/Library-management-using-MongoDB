@@ -1,6 +1,7 @@
 const express = require("express");
 // const { append } = require("express/lib/response");
 const { users } = require("../data/users.json");
+const { getAllUsers, getSingleUserById  } = require("../controllers/user-controller");
 
 const router = express.Router();
 
@@ -9,12 +10,7 @@ const router = express.Router();
    Method - GET
    Access - Public 
    Parameters - None */
-router.get("", (req, res) => {
-    res.status(200).json({
-        success: true,
-        data: users
-    });
-});
+router.get("", getAllUsers );
 
 
 
@@ -25,7 +21,7 @@ router.get("", (req, res) => {
    Access - Public 
    Parameters - id
    */
-router.get("/:id", (req, res) => {
+/*router.get("/:id", (req, res) => {
     const { id } = req.params;
     const user = users.find((each) => each.id === id);
     if (!user) {
@@ -38,7 +34,8 @@ router.get("/:id", (req, res) => {
         success: true,
         data: user
     });
-});
+});*/
+router.get("/:id", getSingleUserById);
 
 /* Description - Create a New User
   Route - /users

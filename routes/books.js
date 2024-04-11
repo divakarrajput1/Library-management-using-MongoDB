@@ -1,7 +1,10 @@
 const express = require("express");
+
 // const { append } = require("express/lib/response");
 const { books } = require("../data/books.json");
 
+const { UserModel, BookModel } = require("../models");
+const { getAllBooks, getSingleBookById, getAllIssuedBooks, addNewBook, updateBookById } = require("../controllers/book-controller");
 const router = express.Router();
 
 /**
@@ -11,9 +14,14 @@ const router = express.Router();
  * Access: Public
  * Parmanters: none
  */
-router.get("/", (req, res) => {
-    res.status(200).json({ success: true, data: books });
-});
+router.get("/", getAllBooks);
 
+router.get("/", getSingleBookById);
+
+router.get("/issued/books", getAllIssuedBooks);
+
+router.post("/", addNewBook);
+
+router.put("/:id", updateBookById);
 
 module.exports = router;
