@@ -1,0 +1,29 @@
+{
+  "name": "library-management-using-mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divakarrajput1/Library-management-using-MongoDB.git"
+  },
+  "author": "divakar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/divakarrajput1/Library-management-using-MongoDB/issues"
+  },
+  "homepage": "https://github.com/divakarrajput1/Library-management-using-MongoDB#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
